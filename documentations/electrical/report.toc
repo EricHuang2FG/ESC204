@@ -1,0 +1,10 @@
+\contentsline {section}{\numberline {1}Overview}{2}{section.1}%
+\contentsline {section}{\numberline {2}Deployment Strategy}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}MG996R: Linear Actuation}{2}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}DF9GMS: Latch Key}{2}{subsection.2.2}%
+\contentsline {section}{\numberline {3}Circuit Design}{2}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Power and Wiring}{2}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}PWM Control}{3}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Circuit Diagrams and Two-Servo Scaling}{3}{subsection.3.3}%
+\contentsline {section}{\numberline {4}Operational Notes}{4}{section.4}%
+\contentsline {section}{\numberline {5}Conclusion}{5}{section.5}%
