@@ -1,9 +1,5 @@
 # MCU for arm
 
-# Notes for myself
-# MCU is client-side, sends HTTPS request to server over local network
-# MCU POST to server and get data/instructions from server and other pico
-
 import os  # access environmental variables stored on board in settings.toml file
 import wifi
 import socketpool
@@ -11,8 +7,9 @@ import ssl
 import adafruit_requests as requests
 import time
 
-
-headers = {"API-Key": "adKOSf6382435738slFKkgjvfd98f9dad98"}
+TIMEOUT = 30
+API_KEY = os.getenv("API_KEY")
+headers = {"API-Key": API_KEY}
 
 SSID, PASSWORD = os.getenv("WIFI_SSID"), os.getenv("WIFI_PASSWORD")
 BASE_URL = "https://active-fire-monitoring-esc204.onrender.com"
@@ -63,7 +60,7 @@ def post_server(http, sensor_readings) -> None:
             f"{BASE_URL}/receive",
             json=data,
             headers=headers,
-            timeout=30,
+            timeout=TIMEOUT,
         )
         response_dictionary = response.json()
         count += 1
@@ -89,7 +86,7 @@ def post_mcu_arm(http, sensor_readings) -> None:
             f"{BASE_URL}/receive",
             json=data,
             headers=headers,
-            timeout=30,
+            timeout=TIMEOUT,
         )
         response_dictionary = response.json()
         count += 1
@@ -109,7 +106,7 @@ def get_server(http) -> None:
         response = http.get(
             f"{BASE_URL}/get_server_data",
             headers=headers,
-            timeout=30,
+            timeout=TIMEOUT,
         )
         response_dictionary = response.json()
         count += 1
@@ -136,7 +133,7 @@ def get_mcu_arm(http) -> None:
             f"{BASE_URL}/get_mcu_data",
             json=target_dictionary,
             headers=headers,
-            timeout=30,
+            timeout=TIMEOUT,
         )
         response_dictionary = response.json()
         count += 1
