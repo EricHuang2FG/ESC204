@@ -1,4 +1,4 @@
-# ESC204 - IoT-Active-Wildfire-Monitoring
+# IoT Active Wildfire Monitoring with the Mobile Monitoring & Sensor Seeding System (MMSSS)
 
 ## Introduction
 This repository contains all the code detailing the backend of the IoT network and server-microcontroller communication specifically for the prototype design of the MMSSS. It contains the data communication storage subsystem (DCSS), data collection component (DCC), and sensor deployment subsystem (SDS). The basic functionality of the IoT network is for the microcontrollers to send sensor data to the server and for the server to send instructional data back to the microcontrollers to facilitate effective communication of data across distances to best monitor active wildfires. The microcontroller used is the Raspberry Pi Pico W. A Pico W would be installed on the rover, to control the mechanical arm responsible for deploying the sensor boxes, and in each sensor box, so as to facilitate sending of sensor data that is representative of the conditions around where each box is deployed.

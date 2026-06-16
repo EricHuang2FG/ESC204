@@ -272,7 +272,7 @@ def get_server(http) -> None:
 # Data is requested from MCU queue specified by `target`
 def get_mcu_sensor_box(http) -> None:
     target_dictionary = {
-        "target": "mcu_sensor_box",
+        "target": "mcu_arm",
     }
 
     for _ in range(5):
