@@ -120,6 +120,8 @@ def thermistor_temp_C(R0=10000.0, T0=25.0, B=3950.0):
     using the B coefficient Steinhart-Hart equation
     """
 
+    global control_pin, thermistor
+
     control_pin.value = True  # turn power on to read temperature
 
     try:  # error handling for division by 0 and value error due to thermistor.value
@@ -178,7 +180,7 @@ def post_server(http, sensor_readings) -> None:
 # sensor_readings (dict) are POSTED to server and appended to MCU queue specified by `to`
 def post_mcu_arm(http, sensor_readings) -> None:
     data = {
-        "to": "mcu_arm",
+        "to": "mcu_sensor_box",
         "data": sensor_readings,
     }
 
@@ -254,4 +256,5 @@ def get_mcu_arm(http) -> None:
 
 
 if __name__ == "__main__":
+    init()
     main()
